@@ -75,7 +75,7 @@ const projectPhases = [
   },
 ]
 
-export default function TransRegionalPipelineProject() {
+export default function Page() {
   // <CHANGE> Added structured data for breadcrumbs and project
   const breadcrumbData = {
     items: [
@@ -190,4 +190,99 @@ export default function TransRegionalPipelineProject() {
                   <h3 className="text-xl font-serif font-bold text-deep-navy mb-3">Key Challenges</h3>
                   <p className="text-muted-foreground">
                     The project required crossing multiple environmentally sensitive areas, navigating complex
-                    regulatory requirements across three states, and maintaining operations\
+                    regulatory requirements across three states, and maintaining operations.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <div>
+                <Badge className="mb-4 bg-energy-orange text-white">Technical Specifications</Badge>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold text-deep-navy mb-2">Pipeline Specifications</h4>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>• 36-inch diameter, API 5L X70 steel</li>
+                      <li>• 0.562-inch wall thickness</li>
+                      <li>• 1,480 psi maximum operating pressure</li>
+                      <li>• Advanced corrosion protection coating</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-deep-navy mb-2">Compression Capacity</h4>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>• 5 compressor stations</li>
+                      <li>• 25,000 HP per station</li>
+                      <li>• Total capacity: 125,000 HP</li>
+                      <li>• Remote monitoring and control</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Project Phases */}
+      <AnimatedSection className="py-20 bg-sand">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-energy-orange text-white">Project Timeline</Badge>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-deep-navy">
+              Four-Phase Construction Approach
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {projectPhases.map((phase, index) => (
+              <div key={phase.phase} className="bg-white p-6 rounded-lg shadow-lg">
+                <div className="text-center mb-4">
+                  <Badge className="bg-deep-navy text-white">{phase.phase}</Badge>
+                </div>
+                <h3 className="text-xl font-serif font-bold text-deep-navy mb-2">{phase.title}</h3>
+                <p className="text-sm text-muted-foreground mb-3">{phase.duration}</p>
+                <p className="text-muted-foreground mb-4">{phase.description}</p>
+                <ul className="space-y-1">
+                  {phase.achievements.map((achievement, idx) => (
+                    <li key={idx} className="text-sm text-muted-foreground flex items-center">
+                      <CheckCircle className="h-4 w-4 text-energy-orange mr-2 flex-shrink-0" />
+                      {achievement}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Key Features */}
+      <AnimatedSection className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-energy-orange text-white">Key Features</Badge>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-deep-navy">
+              Advanced Technology & Innovation
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {keyFeatures.map((feature, index) => (
+              <div key={feature.title} className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-gradient-industrial rounded-lg flex items-center justify-center flex-shrink-0">
+                  <feature.icon className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-serif font-bold text-deep-navy mb-2">{feature.title}</h3>
+                  <p className="text-muted-foreground">{feature.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+    </div>
+  )
+}
