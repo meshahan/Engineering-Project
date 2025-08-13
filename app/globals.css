@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Oil & Gas color palette */
+:root {
+  /* Brand Colors */
+  --deep-navy: #0b1c2e;
+  --petrol-blue: #1e40af;
+  --energy-orange: #ff6a00;
+  --sand: #e9e1d1;
+  --cloud-gray: #e5e7eb;
+
+  /* Updated color system for Oil & Gas theme */
+  --background: #ffffff;
+  --foreground: var(--deep-navy);
+  --card: #ffffff;
+  --card-foreground: var(--deep-navy);
+  --popover: #ffffff;
+  --popover-foreground: var(--deep-navy);
+  --primary: var(--deep-navy);
+  --primary-foreground: #ffffff;
+  --secondary: var(--sand);
+  --secondary-foreground: var(--deep-navy);
+  --muted: var(--cloud-gray);
+  --muted-foreground: #6b7280;
+  --accent: var(--energy-orange);
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #d1d5db;
+  --input: #f3f4f6;
+  --ring: var(--petrol-blue);
+  --chart-1: var(--energy-orange);
+  --chart-2: var(--petrol-blue);
+  --chart-3: var(--deep-navy);
+  --chart-4: var(--sand);
+  --chart-5: var(--cloud-gray);
+  --radius: 0.5rem;
+  --sidebar: #f9fafb;
+  --sidebar-foreground: var(--deep-navy);
+  --sidebar-primary: var(--deep-navy);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--sand);
+  --sidebar-accent-foreground: var(--deep-navy);
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: var(--petrol-blue);
+}
+
+.dark {
+  --background: var(--deep-navy);
+  --foreground: #ffffff;
+  --card: #1f2937;
+  --card-foreground: #ffffff;
+  --popover: #1f2937;
+  --popover-foreground: #ffffff;
+  --primary: var(--energy-orange);
+  --primary-foreground: #ffffff;
+  --secondary: #374151;
+  --secondary-foreground: #ffffff;
+  --muted: #374151;
+  --muted-foreground: #9ca3af;
+  --accent: var(--energy-orange);
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #374151;
+  --input: #374151;
+  --ring: var(--petrol-blue);
+  --chart-1: var(--energy-orange);
+  --chart-2: var(--petrol-blue);
+  --chart-3: #60a5fa;
+  --chart-4: var(--sand);
+  --chart-5: var(--cloud-gray);
+  --sidebar: #111827;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: var(--energy-orange);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #374151;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #374151;
+  --sidebar-ring: var(--petrol-blue);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Custom typography styles for industrial theme */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-bold;
+  }
+
+  h1 {
+    @apply text-4xl lg:text-6xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl lg:text-4xl leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl lg:text-3xl leading-tight;
+  }
+
+  /* Custom utility classes for brand colors */
+  .text-deep-navy {
+    color: var(--deep-navy);
+  }
+
+  .text-petrol-blue {
+    color: var(--petrol-blue);
+  }
+
+  .text-energy-orange {
+    color: var(--energy-orange);
+  }
+
+  .bg-deep-navy {
+    background-color: var(--deep-navy);
+  }
+
+  .bg-petrol-blue {
+    background-color: var(--petrol-blue);
+  }
+
+  .bg-energy-orange {
+    background-color: var(--energy-orange);
+  }
+
+  .bg-sand {
+    background-color: var(--sand);
+  }
+
+  .bg-cloud-gray {
+    background-color: var(--cloud-gray);
+  }
+
+  /* Gradient utilities for industrial theme */
+  .bg-gradient-industrial {
+    background: linear-gradient(135deg, var(--deep-navy) 0%, var(--petrol-blue) 100%);
+  }
+
+  .bg-gradient-energy {
+    background: linear-gradient(135deg, var(--energy-orange) 0%, #ff8533 100%);
+  }
+}
